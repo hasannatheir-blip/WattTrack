@@ -2,7 +2,9 @@ import { Appliance, CalculationResult, TariffBracket, TariffType } from '../type
 import { SUBSIDIZED_TARIFF, NON_SUBSIDIZED_TARIFF } from '../constants';
 
 export function calculateApplianceConsumption(appliance: Appliance) {
-  const dailyKWh = (appliance.powerWatts * appliance.dailyHours) / 1000;
+  const quantity = appliance.quantity || 1;
+  const dutyCycle = appliance.dutyCycle !== undefined ? appliance.dutyCycle / 100 : 1;
+  const dailyKWh = (appliance.powerWatts * appliance.dailyHours * quantity * dutyCycle) / 1000;
   const monthlyKWh = dailyKWh * appliance.daysPerMonth;
   return { dailyKWh, monthlyKWh };
 }

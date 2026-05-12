@@ -46,7 +46,21 @@ export const ApplianceList: React.FC<ApplianceListProps> = ({ appliances, onEdit
                   <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">
                     <Zap className="w-5 h-5" />
                   </div>
-                  <h3 className="font-black text-[16px] text-ink">{appliance.name}</h3>
+                  <div className="flex flex-col">
+                    <h3 className="font-black text-[16px] text-ink">
+                      {appliance.name}
+                      {appliance.quantity && appliance.quantity > 1 && (
+                        <span className="ml-2 text-xs font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded-md">
+                          x{appliance.quantity}
+                        </span>
+                      )}
+                    </h3>
+                    {appliance.dutyCycle && appliance.dutyCycle < 100 && (
+                      <span className="text-[10px] font-bold text-ink-light opacity-60 uppercase tracking-tighter">
+                        {t.isAlternating} ({appliance.dutyCycle}%)
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <div className="text-right">
                   <p className="text-sm font-black text-primary font-mono bg-primary/5 px-3 py-1 rounded-full border border-primary/10">

@@ -4,6 +4,8 @@ export interface Appliance {
   powerWatts: number;
   dailyHours: number;
   daysPerMonth: number;
+  quantity?: number;
+  dutyCycle?: number; // 0 to 100 percentage
 }
 
 export type TariffType = 'subsidized' | 'non-subsidized';

@@ -42,7 +42,11 @@ export const translations = {
     delete: "Delete",
     usage: "Usage",
     mo: "mo",
-    day: "day"
+    day: "day",
+    quantity: "Quantity",
+    activeTime: "Active Time (%)",
+    isAlternating: "Alternating Cycles (e.g. Fridge)",
+    dutyCycleNote: "You may use the internet or artificial intelligence to estimate the active time percentage for your appliance."
   },
   ar: {
     appName: "WattTrack",
@@ -87,7 +91,11 @@ export const translations = {
     delete: "حذف",
     usage: "الاستهلاك",
     mo: "شهر",
-    day: "يوم"
+    day: "يوم",
+    quantity: "الكمية",
+    activeTime: "وقت النشاط (%)",
+    isAlternating: "دورات متناوبة (مثل الثلاجة)",
+    dutyCycleNote: "يمكنك استخدام الإنترنت أو الذكاء الاصطناعي لتقدير نسبة وقت النشاط لجهازك."
   }
 };
 

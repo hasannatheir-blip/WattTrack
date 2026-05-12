@@ -86,15 +86,15 @@ export default function App() {
           {t.householdCalculator}
         </div>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           <Button 
             variant="outline" 
             size="sm" 
             onClick={toggleLanguage}
-            className="rounded-full gap-2 font-bold border-primary/20 text-primary hover:bg-primary hover:text-white transition-all"
+            className="rounded-full h-10 w-10 md:w-auto md:px-4 md:gap-2 font-bold border-primary/20 text-primary hover:bg-primary hover:text-white transition-all p-0 md:p-2"
           >
             <Languages className="w-4 h-4" />
-            <span>{t.language}</span>
+            <span className="hidden md:inline">{t.language}</span>
           </Button>
 
           <Dialog open={isFormOpen} onOpenChange={(open) => {
@@ -102,9 +102,9 @@ export default function App() {
             if (!open) setEditingAppliance(null);
           }}>
             <DialogTrigger asChild>
-              <Button size="lg" className="rounded-full gap-2 shadow-lg hover:shadow-primary/20 transition-all active:scale-95 bg-jordan-gradient text-white border-none px-6">
+              <Button className="rounded-full h-10 w-10 md:h-12 md:w-auto md:px-6 md:gap-2 shadow-lg hover:shadow-primary/20 transition-all active:scale-95 bg-jordan-gradient text-white border-none p-0 md:p-2">
                 <Plus className="w-5 h-5" />
-                <span className="font-black">{t.addNew}</span>
+                <span className="hidden md:inline font-black">{t.addNew}</span>
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px] rounded-3xl">

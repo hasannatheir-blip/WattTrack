@@ -88,67 +88,67 @@ export const Dashboard: React.FC<DashboardProps> = ({ appliances, tariffType, la
   return (
     <div className="space-y-10">
       {/* Welcome Header (Mobile Only) */}
-      <div className="flex items-center justify-between px-1 md:hidden">
+      <div className="flex items-center justify-between px-1 md:hidden mb-4">
         <div>
-          <h2 className="text-2xl font-black tracking-tight text-ink">{t.ahlan}</h2>
-          <p className="text-xs font-bold text-primary">{t.trackEnergy}</p>
+          <h2 className="text-xl md:text-2xl font-black tracking-tight text-ink">{t.ahlan}</h2>
+          <p className="text-[10px] md:text-xs font-bold text-primary">{t.trackEnergy}</p>
         </div>
-        <div className="bg-white p-3 rounded-2xl shadow-xl border-2 border-primary/10 flex items-center gap-3">
-          <JordanFlag className="w-8 h-5 rounded-[4px] shadow-sm" />
-          <span className="text-[12px] font-black uppercase tracking-widest text-primary">JO</span>
+        <div className="bg-white p-2 md:p-3 rounded-xl md:rounded-2xl shadow-lg md:shadow-xl border-2 border-primary/10 flex items-center gap-2 md:gap-3">
+          <JordanFlag className="w-6 h-4 md:w-8 md:h-5 rounded-[2px] md:rounded-[4px] shadow-sm" />
+          <span className="text-[10px] md:text-[12px] font-black uppercase tracking-widest text-primary">JO</span>
         </div>
       </div>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 min-[450px]:grid-cols-2 sm:grid-cols-3 gap-3 md:gap-6">
         <Card className="bg-jordan-black-gradient text-white border-none shadow-xl rounded-[24px] overflow-hidden relative group hover:scale-[1.02] transition-transform duration-300">
           <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
-            <Zap className="w-24 h-24" />
+            <Zap className="w-16 h-16 md:w-24 md:h-24" />
           </div>
-          <CardContent className="p-6 md:p-8 space-y-1 md:space-y-2 relative z-10">
-            <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-black opacity-70">{t.monthlyConsumption}</p>
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl md:text-4xl font-black">{result.monthlyKWh}</span>
-              <span className="text-xs md:text-sm font-bold opacity-70">{t.kWh}</span>
+          <CardContent className="p-5 md:p-8 space-y-1 md:space-y-2 relative z-10">
+            <p className="text-[9px] md:text-[11px] uppercase tracking-[0.2em] font-black opacity-70">{t.monthlyConsumption}</p>
+            <div className="flex items-baseline gap-1 md:gap-2">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-black">{result.monthlyKWh}</span>
+              <span className="text-[10px] md:text-xs lg:text-sm font-bold opacity-70">{t.kWh}</span>
             </div>
           </CardContent>
         </Card>
 
         <Card className="bg-jordan-red-gradient text-white border-none shadow-xl rounded-[24px] overflow-hidden relative group hover:scale-[1.02] transition-transform duration-300">
           <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
-            <Wallet className="w-24 h-24" />
+            <Wallet className="w-16 h-16 md:w-24 md:h-24" />
           </div>
-          <CardContent className="p-6 md:p-8 space-y-1 md:space-y-2 relative z-10">
-            <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-black opacity-70">{t.estimatedBill}</p>
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl md:text-4xl font-black">{result.totalCostJOD.toFixed(3)}</span>
-              <span className="text-xs md:text-sm font-bold opacity-70">JOD</span>
+          <CardContent className="p-5 md:p-8 space-y-1 md:space-y-2 relative z-10">
+            <p className="text-[9px] md:text-[11px] uppercase tracking-[0.2em] font-black opacity-70">{t.estimatedBill}</p>
+            <div className="flex items-baseline gap-1 md:gap-2">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-black">{result.totalCostJOD.toFixed(2)}</span>
+              <span className="text-[10px] md:text-xs lg:text-sm font-bold opacity-70">JOD</span>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-jordan-gradient text-white border-none shadow-xl rounded-[24px] overflow-hidden relative group hover:scale-[1.02] transition-transform duration-300">
+        <Card className="bg-jordan-gradient text-white border-none shadow-xl rounded-[24px] overflow-hidden relative group hover:scale-[1.02] transition-transform duration-300 min-[450px]:col-span-2 sm:col-span-1">
           <div className="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
-            <TrendingUp className="w-24 h-24" />
+            <TrendingUp className="w-16 h-16 md:w-24 md:h-24" />
           </div>
-          <CardContent className="p-6 md:p-8 space-y-1 md:space-y-2 relative z-10">
-            <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] font-black opacity-70">{t.dailyAverage}</p>
-            <div className="flex items-baseline gap-2">
-              <span className="text-3xl md:text-4xl font-black">{result.dailyKWh}</span>
-              <span className="text-xs md:text-sm font-bold opacity-70">{t.kWh}</span>
+          <CardContent className="p-5 md:p-8 space-y-1 md:space-y-2 relative z-10">
+            <p className="text-[9px] md:text-[11px] uppercase tracking-[0.2em] font-black opacity-70">{t.dailyAverage}</p>
+            <div className="flex items-baseline gap-1 md:gap-2">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-black">{result.dailyKWh}</span>
+              <span className="text-[10px] md:text-xs lg:text-sm font-bold opacity-70">{t.kWh}</span>
             </div>
           </CardContent>
         </Card>
       </div>
 
       {/* Charts & Breakdown Row */}
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 gap-6 md:gap-8">
         {appliances.length > 0 && (
           <Card className="border-border shadow-sm bg-card rounded-[20px]">
-            <CardHeader className="p-6 pb-0">
-              <CardTitle className="text-[12px] uppercase tracking-wider font-bold text-ink-light">{t.consumptionBreakdown}</CardTitle>
+            <CardHeader className="p-4 md:p-6 pb-0">
+              <CardTitle className="text-[11px] md:text-[12px] uppercase tracking-wider font-bold text-ink-light">{t.consumptionBreakdown}</CardTitle>
             </CardHeader>
-            <CardContent className="p-6 pt-4 h-[400px]">
+            <CardContent className="p-4 md:p-6 pt-2 md:pt-4 h-[300px] md:h-[400px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData}>
                   <XAxis 

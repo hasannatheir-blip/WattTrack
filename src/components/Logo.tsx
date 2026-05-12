@@ -19,8 +19,8 @@ export const Logo: React.FC = () => {
       
       <div className="flex flex-col">
         <div className="text-3xl font-[900] tracking-tighter leading-none flex items-baseline">
-          <span className="text-ink">Watt</span>
-          <span className="text-primary">Track</span>
+          <span className="text-ink">Track</span>
+          <span className="text-primary">Watt</span>
         </div>
         <div className="text-[10px] uppercase font-black tracking-[0.3em] text-primary/60 mt-1">
           Jordan • الأردن
