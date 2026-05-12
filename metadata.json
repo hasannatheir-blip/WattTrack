@@ -1,0 +1,6 @@
+{
+  "name": "WattTrack",
+  "description": "A manual electricity cost calculator for households in Jordan, supporting subsidized and non-subsidized tariffs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
